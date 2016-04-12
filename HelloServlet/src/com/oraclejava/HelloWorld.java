@@ -25,13 +25,16 @@ public class HelloWorld extends HttpServlet {
 		String msg = sc2.getInitParameter("msg2");
 		String cMsg = sc.getInitParameter("msg");
 		String cMsg2 = sc.getInitParameter("msg2");
+		String cMsg3 = (String)sc.getAttribute("msg3");
+
 		
 		//out.println("<html>");
 		//out.println("<body>");
 		String name = req.getParameter("name1");
 		String sname = (String)req.getSession().getAttribute("userid");
 		String userid = (String)req.getAttribute("userid");
-		out.println("<h1>Hello "+userid+" : "+ name +" : "+ sname +":"+ssname+":"+msg+":"+cMsg+":"+cMsg2+"</h1>");
+		out.println("<h1>Hello "+userid+" : "+ name +" : "+ sname +":"+ssname+":"+msg+":"+cMsg+":"+cMsg2+"</h1><br />");
+		out.println("<h1>"+cMsg3+"</h1>");
 		//out.println("</body>");
 		//out.println("</html>");
 

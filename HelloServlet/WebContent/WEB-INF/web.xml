@@ -4,6 +4,9 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
 
+	<listener>
+		<listener-class>com.oraclejava.InitializeListener</listener-class>
+	</listener>
 	<servlet>
 		<servlet-name>HelloWorld</servlet-name>
 		<servlet-class>com.oraclejava.HelloWorld</servlet-class>
@@ -38,5 +41,5 @@
 	<context-param>
 		<param-name>msg2</param-name>
 		<param-value>Well Come Name</param-value>
-	</context-param>
+	</context-param>	
 </web-app>
