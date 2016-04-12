@@ -18,7 +18,7 @@ public class HelloWorld extends HttpServlet {
 		PrintWriter out = res.getWriter();
 
 		out.println("<html>");
-		out.println("<body><h1>Hello World!</h1></body>");
+		out.println("<body><h1>Hello World!!</h1></body>");
 		out.println("</html>");
 
 	}
