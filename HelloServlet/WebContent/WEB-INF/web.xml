@@ -7,21 +7,36 @@
 	<servlet>
 		<servlet-name>HelloWorld</servlet-name>
 		<servlet-class>com.oraclejava.HelloWorld</servlet-class>
+		<init-param>
+			<param-name>msg</param-name>
+			<param-value>Hello</param-value>
+		</init-param>
+		<init-param>
+			<param-name>msg2</param-name>
+			<param-value>World</param-value>
+		</init-param>
 	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>HelloWorld</servlet-name>
 		<url-pattern>/HelloWorld</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>ReqServ</servlet-name>
 		<servlet-class>com.oraclejava.ReqServ</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>ReqServ</servlet-name>
 		<url-pattern>/ReqServ</url-pattern>
 	</servlet-mapping>
-
+	<context-param>
+		<param-name>msg</param-name>
+		<param-value>Well Come!</param-value>
+	</context-param>
+	<context-param>
+		<param-name>msg2</param-name>
+		<param-value>Well Come Name</param-value>
+	</context-param>
 </web-app>
