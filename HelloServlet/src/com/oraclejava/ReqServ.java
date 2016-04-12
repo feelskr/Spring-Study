@@ -44,15 +44,14 @@ public class ReqServ extends HttpServlet {
 		}
 		
 		out.println(req.getRemoteAddr());
-		out.println("</body>");
-		out.println("</html>");
+
 		
 		/* request, response 요청이 사라진다 */
 		/*
 		 * foward
 		 * ServletContext sc = getServletContext();
 		 * RequestDispatcher : 요청관리자 
-		 * RequestDispatcher rd = sc.getRequestDispatcher("/HelloWorld"); //요청을 처리할 서블릿 컨텍스트를 얻는다
+		 * RequestDispatcher rd = sc.getRequestDispatcher("/HelloWorld"); //요청을 처리할 서블릿 컨텍스트를 얻는다 //절대경로
 		 * RequestDispatcher rd = req.getRequestDispatcher("/HelloWorld");
 		 * rd.forward(req, resp);
 		*/
@@ -65,10 +64,14 @@ public class ReqServ extends HttpServlet {
 		ServletContext sc = getServletContext();
 		sc.setAttribute("userid", "oraclejava_app1");
 		
-		RequestDispatcher rd = req.getRequestDispatcher("/HelloWorld");
+		/*RequestDispatcher rd = req.getRequestDispatcher("/HelloWorld"); //상대경로가능*/
+		RequestDispatcher rd = sc.getRequestDispatcher("/HelloWorld"); //상대경로가능
 		req.setAttribute("userid", "test2");
 		//resp.sendRedirect("http://www.naver.com");
-		rd.forward(req, resp);
+		rd.include(req, resp);
+		//rd.forward(req, resp);
+		out.println("</body>");
+		out.println("</html>");
 	}
 
 }
