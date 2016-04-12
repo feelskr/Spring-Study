@@ -8,10 +8,20 @@
 		<servlet-name>HelloWorld</servlet-name>
 		<servlet-class>com.oraclejava.HelloWorld</servlet-class>
 	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>HelloWorld</servlet-name>
+		<url-pattern>/HelloWorld</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ReqServ</servlet-name>
+		<servlet-class>com.oraclejava.ReqServ</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
-	 	<servlet-name>HelloWorld</servlet-name>
-	 	<url-pattern>/HelloWorld</url-pattern>
+		<servlet-name>ReqServ</servlet-name>
+		<url-pattern>/ReqServ</url-pattern>
 	</servlet-mapping>
 
 </web-app>
