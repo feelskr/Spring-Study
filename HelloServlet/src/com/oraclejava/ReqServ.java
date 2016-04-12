@@ -44,7 +44,8 @@ public class ReqServ extends HttpServlet {
 		}
 		
 		out.println(req.getRemoteAddr());
-
+		out.println("</body>");
+		out.println("</html>");
 		
 		/* request, response 요청이 사라진다 */
 		/*
@@ -70,8 +71,6 @@ public class ReqServ extends HttpServlet {
 		//resp.sendRedirect("http://www.naver.com");
 		rd.include(req, resp);
 		//rd.forward(req, resp);
-		out.println("</body>");
-		out.println("</html>");
 	}
 
 }

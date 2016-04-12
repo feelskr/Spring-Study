@@ -26,7 +26,9 @@ public class HelloWorld extends HttpServlet {
 		String cMsg = sc.getInitParameter("msg");
 		String cMsg2 = sc.getInitParameter("msg2");
 		String cMsg3 = (String)sc.getAttribute("msg3");
-
+		HttpSession session = req.getSession();
+		session.setAttribute("test2", "test");
+		session.invalidate(); //로그아웃과 동일한 효과
 		
 		//out.println("<html>");
 		//out.println("<body>");
