@@ -36,9 +36,11 @@ public class ReqServ extends HttpServlet {
 		out.println("---헤더 정보 구하기----<br />");
 		while(headers.hasMoreElements()) {
 			String s1 = headers.nextElement();
-			out.println(s1+"<br />");
+			out.println(s1+" : ");
 			out.println(req.getHeader(s1) + "<br />");
 		}
+		
+		out.println(req.getRemoteAddr());
 		out.println("</body>");
 		out.println("</html>");
 
