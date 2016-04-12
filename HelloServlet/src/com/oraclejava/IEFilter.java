@@ -26,10 +26,9 @@ public class IEFilter implements Filter {
 		String userAgent = ((HttpServletRequest) req).getHeader("user-agent");
 		if(userAgent != null && userAgent.toLowerCase().contains("ie")) {
 			((HttpServletResponse) resp).sendRedirect("http://www.naver.com");
-		} else {
-			chain.doFilter(req, resp);
 		}
-
+		
+		chain.doFilter(req, resp);
 	}
 
 	@Override
