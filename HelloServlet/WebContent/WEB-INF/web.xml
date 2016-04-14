@@ -44,6 +44,26 @@
 		<servlet-name>ReqServ</servlet-name>
 		<url-pattern>/ReqServ</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SingleUpload</servlet-name>
+		<servlet-class>com.oraclejava.SingleUpload</servlet-class>
+	</servlet>	
+		<servlet-mapping>
+		<servlet-name>SingleUpload</servlet-name>
+		<url-pattern>/SingleUpload</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>MultiUpload</servlet-name>
+		<servlet-class>com.oraclejava.MultiUpload</servlet-class>
+	</servlet>	
+		<servlet-mapping>
+		<servlet-name>MultiUpload</servlet-name>
+		<url-pattern>/MultiUpload</url-pattern>
+	</servlet-mapping>
+	
+	
 	<context-param>
 		<param-name>msg</param-name>
 		<param-value>Well Come!</param-value>
