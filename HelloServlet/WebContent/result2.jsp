@@ -10,20 +10,9 @@
 <body>
 	<%
 		Calendar cal = new GregorianCalendar();
-		switch (cal.get(Calendar.DAY_OF_WEEK)) {
-		case Calendar.MONDAY:
 	%>
-		<jsp:include page="monday.jsp" />
-	<%
-		break;
-		case Calendar.THURSDAY:
-	%>
-	<jsp:include page="thursday.jsp" flush="true">
-		<jsp:param value="iu.jpg" name="myimg" />
-	</jsp:include>
-	<%
-		break;
-		} 
-	%>
+	<jsp:forward page="yoil.jsp">
+		<jsp:param value="<%=cal.get(Calendar.DAY_OF_WEEK)%>" name="yo" />
+	</jsp:forward>>
 </body>
 </html>
