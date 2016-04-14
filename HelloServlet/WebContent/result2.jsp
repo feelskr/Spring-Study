@@ -9,6 +9,7 @@
 </head>
 <body>
 	<%
+		session.setAttribute("userid", "oraclejava");
 		Calendar cal = new GregorianCalendar();
 	%>
 	<jsp:forward page="yoil.jsp">
