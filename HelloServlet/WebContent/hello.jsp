@@ -1,13 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+	pageEncoding="EUC-KR"%>
+<%@ include file="param.jsp" %>
 </head>
 <body>
-<%-- jsp 주석 --%>
-<!-- html 주석 -->
+	<%-- jsp 주석 --%>
+	<!-- html 주석 -->
+	<%! int x = 0; %>
+	<%
+		out.println("x=" + x);
+		x++;
+	%>
+	<h3>
+		결과 :
+		<%= x %></h3>
+	<h3><%= new Date() %></h3>
 </body>
 </html>
