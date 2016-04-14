@@ -19,7 +19,7 @@
 	String[] movies = {"명량", "국제시장", "아바타", "도둑들"};
 	%>
 	<c:set var="movies" value="<%= movies %>" />
-	<c:forEach var="movie" items="${movies}">
+	<c:forEach var="movie" items="${movies}" varStatus="st">
 		${st.count} : ${movie}<br />
 	</c:forEach>
 </body>
