@@ -4,14 +4,9 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
 
-	<!-- <filter>
-		<filter-name>IEFilter</filter-name>
-		<filter-class>com.oraclejava.IEFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>IEFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping> -->
+	<!-- <filter> <filter-name>IEFilter</filter-name> <filter-class>com.oraclejava.IEFilter</filter-class> 
+		</filter> <filter-mapping> <filter-name>IEFilter</filter-name> <url-pattern>/*</url-pattern> 
+		</filter-mapping> -->
 	<listener>
 		<listener-class>com.oraclejava.InitializeListener</listener-class>
 	</listener>
@@ -45,26 +40,26 @@
 		<servlet-name>ReqServ</servlet-name>
 		<url-pattern>/ReqServ</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>SingleUpload</servlet-name>
 		<servlet-class>com.oraclejava.SingleUpload</servlet-class>
-	</servlet>	
-		<servlet-mapping>
+	</servlet>
+	<servlet-mapping>
 		<servlet-name>SingleUpload</servlet-name>
 		<url-pattern>/SingleUpload</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>MultiUpload</servlet-name>
 		<servlet-class>com.oraclejava.MultiUpload</servlet-class>
-	</servlet>	
-		<servlet-mapping>
+	</servlet>
+	<servlet-mapping>
 		<servlet-name>MultiUpload</servlet-name>
 		<url-pattern>/MultiUpload</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
 	<context-param>
 		<param-name>msg</param-name>
 		<param-value>Well Come!</param-value>
@@ -73,4 +68,11 @@
 		<param-name>msg2</param-name>
 		<param-value>Well Come Name</param-value>
 	</context-param>
+
+	<jsp-config>
+		<taglib>
+			<taglib-uri>http://www.oraclejava.co.kr/tags</taglib-uri>
+			<taglib-location>/WEB-INF/lib/hello.tld</taglib-location>
+		</taglib>
+	</jsp-config>
 </web-app>
