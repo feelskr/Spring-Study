@@ -1,78 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	id="WebApp_ID" version="3.1">
-
-	<!-- <filter> <filter-name>IEFilter</filter-name> <filter-class>com.oraclejava.IEFilter</filter-class> 
-		</filter> <filter-mapping> <filter-name>IEFilter</filter-name> <url-pattern>/*</url-pattern> 
-		</filter-mapping> -->
-	<listener>
-		<listener-class>com.oraclejava.InitializeListener</listener-class>
-	</listener>
-	<listener>
-		<listener-class>com.oraclejava.CheckSessionListener</listener-class>
-	</listener>
-	<servlet>
-		<servlet-name>HelloWorld</servlet-name>
-		<servlet-class>com.oraclejava.HelloWorld</servlet-class>
-		<init-param>
-			<param-name>msg</param-name>
-			<param-value>Hello</param-value>
-		</init-param>
-		<init-param>
-			<param-name>msg2</param-name>
-			<param-value>World</param-value>
-		</init-param>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>HelloWorld</servlet-name>
-		<url-pattern>/HelloWorld</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>ReqServ</servlet-name>
-		<servlet-class>com.oraclejava.ReqServ</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>ReqServ</servlet-name>
-		<url-pattern>/ReqServ</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>SingleUpload</servlet-name>
-		<servlet-class>com.oraclejava.SingleUpload</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>SingleUpload</servlet-name>
-		<url-pattern>/SingleUpload</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>MultiUpload</servlet-name>
-		<servlet-class>com.oraclejava.MultiUpload</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>MultiUpload</servlet-name>
-		<url-pattern>/MultiUpload</url-pattern>
-	</servlet-mapping>
-
-
-	<context-param>
-		<param-name>msg</param-name>
-		<param-value>Well Come!</param-value>
-	</context-param>
-	<context-param>
-		<param-name>msg2</param-name>
-		<param-value>Well Come Name</param-value>
-	</context-param>
-
-	<jsp-config>
-		<taglib>
-			<taglib-uri>http://www.oraclejava.co.kr/tags</taglib-uri>
-			<taglib-location>/WEB-INF/lib/hello.tld</taglib-location>
-		</taglib>
-	</jsp-config>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <listener>
+    <listener-class>com.oraclejava.InitializeListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.oraclejava.CheckSessionListener</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>HelloWorld</servlet-name>
+    <servlet-class>com.oraclejava.HelloWorld</servlet-class>
+    <init-param>
+      <param-name>msg</param-name>
+      <param-value>Hello</param-value>
+    </init-param>
+    <init-param>
+      <param-name>msg2</param-name>
+      <param-value>World</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloWorld</servlet-name>
+    <url-pattern>/HelloWorld</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ReqServ</servlet-name>
+    <servlet-class>com.oraclejava.ReqServ</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReqServ</servlet-name>
+    <url-pattern>/ReqServ</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SingleUpload</servlet-name>
+    <servlet-class>com.oraclejava.SingleUpload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SingleUpload</servlet-name>
+    <url-pattern>/SingleUpload</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>MultiUpload</servlet-name>
+    <servlet-class>com.oraclejava.MultiUpload</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MultiUpload</servlet-name>
+    <url-pattern>/MultiUpload</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>msg</param-name>
+    <param-value>Well Come!</param-value>
+  </context-param>
+  <context-param>
+    <param-name>msg2</param-name>
+    <param-value>Well Come Name</param-value>
+  </context-param>
+  <jsp-config>
+    <taglib>
+      <taglib-uri>http://www.oraclejava.co.kr/tags</taglib-uri>
+      <taglib-location>/WEB-INF/lib/hello.tld</taglib-location>
+    </taglib>
+  </jsp-config>
 </web-app>
