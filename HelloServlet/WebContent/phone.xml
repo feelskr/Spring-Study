@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phonelist>
+	<phone>
+		<name>아이폰</name>
+		<img>ip.jpg</img>
+	</phone>
+	<phone>
+		<name>갤럭시</name>
+		<img>ga.jpg</img>
+	</phone>
+		<phone>
+		<name>옵티머스</name>
+		<img>ot.jpg</img>
+	</phone>
+		<phone>
+		<name>베가</name>
+		<img>vega.jpg</img>
+	</phone>	
+</phonelist>
