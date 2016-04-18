@@ -41,7 +41,7 @@ function phoneComplete() {
 </head>
 <body>
 	<form name="ajaxForm">
-		<input type="button" value="폰리스트" onclick="LoadPhoneList('아이폰')" />
+		<input type="button" value="아이폰" onclick="LoadPhoneList('아이폰')" />
 		<input type="button" value="갤럭시" onclick="LoadPhoneList('갤럭시')" />
 		<input type="button" value="옵티머스" onclick="LoadPhoneList('옵티머스')" />
 		<input type="button" value="베가" onclick="LoadPhoneList('베가')" />	
