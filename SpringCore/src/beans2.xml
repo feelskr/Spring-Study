@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	
+	<bean id="hkim" class="com.oraclejava.Person">
+		<property name="name">
+			<value>이영진</value>
+		</property>
+		<property name="phone">
+			<ref bean="iphone6" />
+		</property>		
+		<property name="phones">
+			<set>
+			<ref bean="g4" />
+			<ref bean="g5" />
+			<ref bean="g4" />		
+			<ref bean="g5" />
+			</set>
+		</property>
+	</bean>
+	<bean name="g4" class="com.oraclejava.SmartPhone">
+		<property name="name"  value="g4" />
+		<property name="price"  value="78만원" />
+	</bean>	
+		<bean name="g5" class="com.oraclejava.SmartPhone">
+		<property name="name"  value="g5" />
+		<property name="price"  value="98만원" />
+	</bean>	
+	<bean name="iphone6" class="com.oraclejava.SmartPhone">
+		<property name="name"  value="Iphone6sPlus" />
+		<property name="price"  value="98만원" />
+	</bean>	
+</beans>
