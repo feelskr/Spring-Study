@@ -3,33 +3,57 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	 http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
-	
+
 	<bean id="hkim" class="com.oraclejava.Person">
 		<property name="name">
 			<value>이영진</value>
 		</property>
 		<property name="phone">
 			<ref bean="iphone6" />
-		</property>		
+		</property>
 		<property name="phones">
+			<list>
+				<ref bean="g4" />
+				<ref bean="iphone6" />				
+				<ref bean="iphone6" />
+			</list>
+		</property>
+		<property name="phoneSet">
 			<set>
-			<ref bean="g4" />
-			<ref bean="g5" />
-			<ref bean="g4" />		
-			<ref bean="g5" />
+				<ref bean="g4" />
+				<ref bean="g5" />
+				<ref bean="g4" />
+				<ref bean="g5" />
 			</set>
+		</property>
+		<property name="phoneMap">
+			<map>
+				<entry key="phone1">
+					<ref bean="iphone6" />
+				</entry>
+				<entry key="phone2">
+					<ref bean="g5" />
+				</entry>
+			</map>
+		</property>
+		<property name="phoneProps">
+			<props>
+				<prop key="phone1">갤럭시S1</prop>
+				<prop key="phone2">갤럭시S4</prop>
+				<prop key="phone3">갤럭시S5</prop>
+			</props>
 		</property>
 	</bean>
 	<bean name="g4" class="com.oraclejava.SmartPhone">
-		<property name="name"  value="g4" />
-		<property name="price"  value="78만원" />
-	</bean>	
-		<bean name="g5" class="com.oraclejava.SmartPhone">
-		<property name="name"  value="g5" />
-		<property name="price"  value="98만원" />
-	</bean>	
+		<property name="name" value="g4" />
+		<property name="price" value="78만원" />
+	</bean>
+	<bean name="g5" class="com.oraclejava.SmartPhone">
+		<property name="name" value="g5" />
+		<property name="price" value="98만원" />
+	</bean>
 	<bean name="iphone6" class="com.oraclejava.SmartPhone">
-		<property name="name"  value="Iphone6sPlus" />
-		<property name="price"  value="98만원" />
-	</bean>	
+		<property name="name" value="Iphone6sPlus" />
+		<property name="price" value="98만원" />
+	</bean>
 </beans>
