@@ -6,15 +6,16 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
 	<context:annotation-config />
-	<context:component-scan base-package="com.oraclejava.mapper" />
+	<context:component-scan base-package="com.oraclejava" />
 
-	<bean id="ContactsDao" class="com.oraclejava.JdbcContactsDao">
-		<!-- <property name="dataSource" ref="dataSource" /> -->
+
+<!-- 	<bean id="ContactsDao" class="com.oraclejava.JdbcContactsDao">
+		<property name="dataSource" ref="dataSource" />
 	</bean>
 
 	<bean id="ContactsDao2" class="com.oraclejava.MyBatisContactsDao">
-	<!-- 	<property name="contactsMapper" ref="contactsMapper" /> -->
-	</bean>
+		<property name="contactsMapper" ref="contactsMapper" />
+	</bean> -->
 
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
 		destroy-method="close">

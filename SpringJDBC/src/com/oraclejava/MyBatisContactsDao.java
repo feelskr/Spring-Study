@@ -3,9 +3,11 @@ package com.oraclejava;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.oraclejava.mapper.ContactsMapper;
 
+@Component("contactsDao2")
 public class MyBatisContactsDao implements ContactsDao {
 
 	@Autowired

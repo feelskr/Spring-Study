@@ -9,7 +9,7 @@ public class ContactList {
 
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-		ContactsDao contactDao = (ContactsDao) context.getBean("jdbcContactsDao");
+		ContactsDao contactDao = (ContactsDao) context.getBean("contactsDao2");
 		List<Contact> contactList = contactDao.GetContactsList();
 		for (Contact contact : contactList) {
 			System.out.printf("%d. %s %s\n", contact.getContactId(), contact.getLastName(), contact.getFirstName());
