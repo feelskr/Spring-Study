@@ -2,23 +2,26 @@ package com.oraclejava.test01;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping("/baseball")
 public class BaseballController {
-	//포워드 방식(request 유지)
-	@RequestMapping("/baseball")	
+	// 포워드 방식(request 유지)
 	public String index() {
-		return "forward:/baseball2";
-	}
-	
-	//리다이렉트 방식(URL 변경)
-	@RequestMapping("/baseball2")
-	public String index2() {
-		return "redirect:/baseball3";
+		return "baseball/index";
 	}
 
-	@RequestMapping("/baseball3")
-	public String index3() {
-		return "/baseball/index3";
+	@RequestMapping(value = "/team", method={ RequestMethod.GET })
+	public ModelAndView showTeam(@RequestParam(value="name", required=true) 
+	String teamName) {
+		ModelAndView mav = new ModelAndView("/baseball/teamView");
+
+		mav.addObject("teamName", teamName);
+		return mav;
 	}
+
+	
 }
