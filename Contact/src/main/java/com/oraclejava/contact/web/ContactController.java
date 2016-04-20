@@ -23,8 +23,8 @@ public class ContactController {
 	@RequestMapping(value="/add", method=RequestMethod.GET)
 	public String addContact(Model model) {
 		Contact contact = initContact();
-		contact.setFirstName("홍");
-		contact.setLastName("길동");
+		contact.setLastName("홍");
+		contact.setFirstName("길동");
 		model.addAttribute("contact", contact);	
 		return "/contact/add";
 	}
