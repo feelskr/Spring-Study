@@ -23,6 +23,18 @@ li {
 	src="<c:url value="/resources/js/jquery-1.12.3.min.js" />"></script>
 </head>
 <body>
+<table width="500" border="1">
+<tr>
+	<th>성</th>
+	<th>이름</th>
+</tr>
+<c:forEach var="item" items="${ model }">
+<tr>
+	<td>${item.last_name }</td>
+	<td>${item.first_name }</td>
+</tr>
+</c:forEach>
+</table>
 	<div style="height:150px;">
 		<ul
 			style="float: left; border: 1px solid #dedede; margin-right: 15px; padding: 10px;">
