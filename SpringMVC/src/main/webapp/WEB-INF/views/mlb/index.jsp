@@ -24,7 +24,7 @@
 		</thead>
 		<tfoot>
 			<tr>
-				<td colspan="2" align="center" height="35"><a href="#"
+				<td colspan="2" align="center" height="35"><a href="javascript:;"
 					class="button">야구팀 리스트</a></td>
 			</tr>
 		</tfoot>
