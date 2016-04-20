@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"htt://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oraclejava.mapper.contact.ContactsMapper">
+	<resultMap type="com.oraclejava.contact.dto.Contact" id="ContactResult">
+		<result column="contact_id" property="contactId" />
+		<result column="first_name" property="firstName" />
+		<result column="last_name" property="lastName" />
+	</resultMap>
+	<select id="GetAllContacts" resultMap="ContactResult">
+		SELECT contact_id,
+		last_name, first_name FROM contacts
+	</select>
+	<insert id="InsertContact" parameterType="com.oraclejava.contact.dto.Contact">
+		INSERT INTO contacts(last_name, first_name)
+		VALUES( #{lastName}, #{firstName} )
+	</insert>
+</mapper>

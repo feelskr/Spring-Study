@@ -11,6 +11,8 @@
 
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
+	<context:component-scan base-package="com.oraclejava.contact" />	
+	<context:component-scan base-package="com.oraclejava.mapper" />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
 		up static resources in the ${webappRoot}/resources directory -->
@@ -25,6 +27,7 @@
 	</beans:bean>
 
 	<!-- Datasource 설정 -->
+	<context:property-placeholder location="classpath:jdbc.properties" />	
 	<beans:bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="${jdbc.driverClassName}" />
@@ -33,7 +36,15 @@
 		<beans:property name="password" value="${jdbc.password}" />
 	</beans:bean>
 	
-	<context:property-placeholder location="classpath:jdbc.properties" />
+	<!-- mybatis 설정 -->
+	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" /> 
+	</beans:bean>
+
+	<!-- mybatis mapper 설정 -->
+	<beans:bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<beans:property name="basePackage" value="com.oraclejava.mapper" />
+		<beans:property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</beans:bean>
 	
-	<context:component-scan base-package="com.oraclejava.contact" />
 </beans:beans>

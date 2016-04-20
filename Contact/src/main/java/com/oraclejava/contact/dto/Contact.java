@@ -1,7 +1,7 @@
 package com.oraclejava.contact.dto;
 
 public class Contact {
-
+	private int contactId;
 	private String lastName;
 	private String firstName;
 
@@ -19,6 +19,14 @@ public class Contact {
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+
+	public int getContactId() {
+		return contactId;
+	}
+
+	public void setContactId(int contactId) {
+		this.contactId = contactId;
 	}
 
 }
