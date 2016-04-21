@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"htt://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oraclejava.restaurant.mapper.RestaurantMapper">
+	<resultMap type="com.oraclejava.restaurant.dto.Restaurant"
+		id="RestaurantResult">
+		<result column="restaurant_id" property="restaurantId" />
+		<result column="restaurant_name" property="restaurantName" />
+		<result column="lat" property="lat" />
+		<result column="lon" property="lon" />
+		<result column="pr" property="pr" />
+		<result column="image" property="image" />
+	</resultMap>
+	
+	<select id="GetRestaurantById" parameterType="int" resultMap="RestaurantResult">
+		SELECT restaurant_id, restaurant_name, lat, lon, pr, image FROM restaurant WHERE restaurant_id = #{id}
+	</select>	
+	
+	<select id="GetRestaurantList" resultMap="RestaurantResult">
+		SELECT
+		restaurant_id, restaurant_name, lat, lon, pr
+		FROM
+		restaurant
+		LIMIT #{startIdx}, #{pageCount}
+	</select>
+	<select id="GetCount" resultType="int">
+		SELECT count(*) FROM restaurant
+	</select>
+	<insert id="InsertRest" parameterType="com.oraclejava.restaurant.dto.Restaurant">
+		INSERT INTO
+			restaurant(restaurant_name, lat, lon, pr, image)
+		VALUES
+			(#{restaurantName}, #{lat}, #{lon}, #{pr}, #{image} )
+	</insert>
+	<update id="UpdateRest" parameterType="com.oraclejava.restaurant.dto.Restaurant">
+		UPDATE
+		restaurant
+		SET
+		restaurant_name=#{restaurantName},
+		lat=#{lat},
+		lon=#{lon},
+		pr=#{pr},
+		image=#{image}
+		WHERE
+		restaurant_id=#{restaurantId}
+	</update>
+	<delete id="DeleteRest" parameterType="int">
+		DELETE FROM restaurant where restaurant_id=#{restaurantId}
+	</delete>
+</mapper>
