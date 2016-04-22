@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"htt://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oraclejava.restaurant.mapper.ReviewMapper">
+	<resultMap type="com.oraclejava.restaurant.dto.Review"
+		id="ReviewResult">
+		<result column="review_id" property="reviewId" />
+		<result column="rate" property="rate" />
+		<result column="body" property="body" />
+		<result column="u_date" property="uDate" />
+		<result column="rid" property="rid" />
+		<result column="uid" property="uid" />
+	</resultMap>
+	
+	<select id="GetReviewById" parameterType="int" resultMap="ReviewResult">
+		SELECT review_id, rate, body, u_date, rid, uid FROM review WHERE review_id = #{review_id}
+	</select>	
+	
+	<select id="GetReviewList" resultMap="ReviewResult">
+		SELECT
+		review_id, rate, body, u_date, rid, uid
+		FROM
+		review
+		WHERE rid = #{rid}
+		ORDER BY review_id DESC
+	</select>
+
+	<select id="GetAverageById" resultType="java.lang.Double">
+		SELECT avg(rate) FROM review WHERE rid =#{id}
+	</select>
+
+	<insert id="CreateReview" parameterType="com.oraclejava.restaurant.dto.Review">
+		INSERT INTO
+			review(rate, body, u_date, rid, uid)
+		VALUES
+		(
+			#{rate},
+			#{body},
+			CURDATE(),
+			#{rid},
+			#{uid}
+		)
+	</insert>
+
+	<delete id="DeleteReview" >
+		DELETE FROM review where review_id=#{reviewId} AND uid=#{uid}
+	</delete>
+</mapper>

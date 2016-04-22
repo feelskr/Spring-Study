@@ -22,4 +22,5 @@ public interface RestaurantService {
 
 	// 삭제
 	public void DeleteRest(int restaurantId);
+	
 }

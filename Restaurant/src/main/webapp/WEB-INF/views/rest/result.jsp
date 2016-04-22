@@ -8,8 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-추가되었습니다.
+<p>
+<c:if test="${'regist' == mode}">
+	추가되었습니다.
+</c:if>
+<c:if test="${'update' == mode}">
+	수정되었습니다.
+</c:if>
+</p>
+<p>
 <a href="<c:url value="/rest/regist" />">추가</a>
 <a href="<c:url value="/rest/list" />">리스트</a>
+</p>
 </body>
 </html>

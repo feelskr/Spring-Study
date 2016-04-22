@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.oraclejava.restaurant.dto.Restaurant;
+import com.oraclejava.restaurant.dto.Review;
 import com.oraclejava.restaurant.mapper.RestaurantMapper;
+import com.oraclejava.restaurant.mapper.ReviewMapper;
 import com.oraclejava.restaurant.service.RestaurantService;
 
 @Service("restaurantService")
@@ -14,6 +16,10 @@ public class RestaurantServiceImpl implements RestaurantService {
 
 	@Autowired
 	private RestaurantMapper restaurantMapper;
+	
+	@Autowired
+	private ReviewMapper reviewMapper;
+	
 	
 	@Override
 	public List<Restaurant> GetRestaurantList(int page, int pageCount) {

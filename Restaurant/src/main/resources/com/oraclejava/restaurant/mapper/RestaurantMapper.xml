@@ -10,6 +10,7 @@
 		<result column="lon" property="lon" />
 		<result column="pr" property="pr" />
 		<result column="image" property="image" />
+		
 	</resultMap>
 	
 	<select id="GetRestaurantById" parameterType="int" resultMap="RestaurantResult">
@@ -30,19 +31,25 @@
 		INSERT INTO
 			restaurant(restaurant_name, lat, lon, pr, image)
 		VALUES
-			(#{restaurantName}, #{lat}, #{lon}, #{pr}, #{image} )
+			(
+			#{restaurantName},
+			#{lat},
+			#{lon},
+			#{pr},
+			#{image}	 )
 	</insert>
 	<update id="UpdateRest" parameterType="com.oraclejava.restaurant.dto.Restaurant">
 		UPDATE
 		restaurant
 		SET
-		restaurant_name=#{restaurantName},
-		lat=#{lat},
-		lon=#{lon},
-		pr=#{pr},
-		image=#{image}
-		WHERE
-		restaurant_id=#{restaurantId}
+			restaurant_name=#{restaurantName}
+			,lat=#{lat}
+			,lon=#{lon}
+			,pr=#{pr}
+			<if test="image != null">
+			,image=#{image}
+			</if>
+		WHERE restaurant_id=#{restaurantId}
 	</update>
 	<delete id="DeleteRest" parameterType="int">
 		DELETE FROM restaurant where restaurant_id=#{restaurantId}
